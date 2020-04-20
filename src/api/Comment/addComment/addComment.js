@@ -1,5 +1,5 @@
-import { isAuthenticated } from "../../middlewares";
-import { prisma } from "../../../generated/prisma-client";
+import { isAuthenticated } from "../../../middlewares";
+import { prisma } from "../../../../generated/prisma-client";
 
 export default {
   Mutation: {
@@ -10,17 +10,17 @@ export default {
       const comment = await prisma.createComment({
         user: {
           connect: {
-            id: user.id,
-          },
+            id: user.id
+          }
         },
         post: {
           connect: {
-            id: postId,
-          },
+            id: postId
+          }
         },
-        text,
+        text
       });
       return comment;
-    },
-  },
+    }
+  }
 };
