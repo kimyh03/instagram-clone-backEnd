@@ -13,15 +13,15 @@ export default {
           data: {
             following: {
               connect: {
-                id,
-              },
-            },
-          },
+                id
+              }
+            }
+          }
         });
         return true;
       } catch {
         return false;
       }
-    },
-  },
+    }
+  }
 };
